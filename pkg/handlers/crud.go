@@ -13,7 +13,7 @@ import (
 )
 
 func CreateItem(w http.ResponseWriter, r *http.Request) {
-	client, err := database.CoonectDB()
+	client, err := database.ConnectDB()
 	if err != nil {
 		http.Error(w, `{"message":"Failed to connect database"}`, http.StatusInternalServerError)
 		return
@@ -33,7 +33,7 @@ func CreateItem(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetItems(w http.ResponseWriter, r *http.Request) {
-	client, err := database.CoonectDB()
+	client, err := database.ConnectDB()
 	if err != nil {
 		http.Error(w, `{"message":"Failed to connect database"}`, http.StatusInternalServerError)
 		return
